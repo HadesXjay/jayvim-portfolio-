@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay Vim Parducho | Modern Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f4f4f8;
+      --text: #111;
+      --card: #fff;
+      --accent: #0077ff;
+    }
+
+    [data-theme='dark'] {
+      --bg: #121212;
+      --text: #f5f5f5;
+      --card: #1e1e1e;
+      --accent: #66ccff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header.hero {
+      background: linear-gradient(to right, #0077ff, #00c6ff);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header.hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header.hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav .links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    nav .toggle {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icons {
+      font-size: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      padding: 0.75rem 2rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <nav>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle" onclick="toggleTheme()">Dark Mode</button>
+  </nav>
+
+  <header class="hero">
+    <h1><i class="fas fa-laptop-code"></i> Jay Vim Parducho</h1>
+    <p>IT Helpdesk Specialist | Cloud Engineer-in-Progress</p>
+  </header>
+
+  <div class="container">
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Experienced IT Service Desk professional with expertise in Active Directory, Microsoft 365, ITSM platforms, and cloud fundamentals. I specialize in solving user problems efficiently and I'm currently diving deeper into cloud engineering and automation tools.</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Tech Stack</h2>
+      <div class="icons">
+        <i class="fab fa-microsoft" title="Microsoft 365"></i>
+        <i class="fas fa-user-shield" title="Active Directory"></i>
+        <i class="fas fa-network-wired" title="Networking"></i>
+        <i class="fas fa-tools" title="Troubleshooting"></i>
+        <i class="fab fa-azure" title="Azure"></i>
+        <i class="fas fa-terminal" title="PowerShell"></i>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3><i class="fas fa-keyboard"></i> Password Reset Bot</h3>
+          <p>Automated password reset flow using Power Automate and AD integration.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-box-open"></i> IT Asset Tracker</h3>
+          <p>Built a SharePoint-based inventory tracker integrated with ticketing system.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-book"></i> Self-Service Knowledgebase</h3>
+          <p>Created internal KB to reduce ticket volume using markdown pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="card">
+        <h3>Grace Global (2024–Present)</h3>
+        <p>Handled incident & request management using Ivanti. Created and maintained AD accounts, security groups. Ensured SLA compliance and collaborated cross-team.</p>
+      </div>
+      <div class="card">
+        <h3>HCLTech (2023–2024)</h3>
+        <p>Supported enterprise users with access, software, and hardware provisioning. Maintained KB and documented escalations effectively.</p>
+      </div>
+      <div class="card">
+        <h3>Accenture (2022–2023)</h3>
+        <p>Provided SaaS/cloud support for global clients. Developed strong troubleshooting and soft skills while learning internal tools and routing systems.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jayvimp@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Jay Vim Parducho — Built with 💻 & 💙</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>
